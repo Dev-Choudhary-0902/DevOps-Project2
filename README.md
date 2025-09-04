@@ -29,11 +29,6 @@ Once you have your swarm, in this directory run:
 docker stack deploy --compose-file docker-stack.yml vote
 ```
 
-
-## Architecture
-
-![Architecture diagram](architecture.excalidraw.png)
-
 * A front-end web app in [Python](/vote) which lets you vote between two options
 * A [Redis](https://hub.docker.com/_/redis/) which collects new votes
 * A [.NET](/worker/) worker which consumes votes and stores them in…
