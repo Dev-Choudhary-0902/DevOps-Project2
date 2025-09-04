@@ -4,8 +4,6 @@ A simple distributed application running across multiple Docker containers.
 
 ## Getting started
 
-Download [Docker Desktop](https://www.docker.com/products/docker-desktop) for Mac or Windows. [Docker Compose](https://docs.docker.com/compose) will be automatically installed. On Linux, make sure you have the latest version of [Compose](https://docs.docker.com/compose/install/).
-
 This solution uses Python, Node.js, .NET, with Redis for messaging and Postgres for storage.
 
 Run in this directory to build and run the app:
@@ -28,23 +26,6 @@ Once you have your swarm, in this directory run:
 docker stack deploy --compose-file docker-stack.yml vote
 ```
 
-## Run the app in Kubernetes
-
-The folder k8s-specifications contains the YAML specifications of the Voting App's services.
-
-Run the following command to create the deployments and services. Note it will create these resources in your current namespace (`default` if you haven't changed it.)
-
-```shell
-kubectl create -f k8s-specifications/
-```
-
-The `vote` web app is then available on port 31000 on each host of the cluster, the `result` web app is available on port 31001.
-
-To remove them, run:
-
-```shell
-kubectl delete -f k8s-specifications/
-```
 
 ## Architecture
 
